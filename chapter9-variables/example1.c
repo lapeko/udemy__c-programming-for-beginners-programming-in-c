@@ -1,13 +1,11 @@
+#include <math.h>
 #include "stdio.h"
 
 int main() {
-    int current_year;
-    int age_years;
-    printf("Enter current year\n");
-    scanf("%d", &current_year);
-    printf("Enter your age in years'\n");
-    scanf("%d", &age_years);
-    printf("You was born in: %d", current_year - age_years);
+    int x1 = 1, y1 = -15, x2 = 4, y2 = -19;
+
+    double res = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    printf("%lf", res);
 
     return 0;
 }
