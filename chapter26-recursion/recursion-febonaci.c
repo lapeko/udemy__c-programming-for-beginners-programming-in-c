@@ -18,15 +18,33 @@ int count_of_digits(int num) {
     return 1 + count_of_digits(num / 10);
 }
 
+void print_nums(int count, int num1, int num2) {
+    if (count < 1) return;
+    printf("%d", num1);
+    print_nums(count - 1, num1, num2);
+    printf("%d", num2);
+    printf("%d\n", num2);
+}
+
+int check_order(int num) {
+    if (num < 100 && num >= 10) return num / 10 < num % 10 ? 1 : -1;
+
+    int res = check_order(num / 10);
+    if (res == (num / 100 < num / 10 % 10 ? 1 : -1)) return res;
+
+    return 0;
+}
+
 int main() {
-    int fib = fibonacci(10);
-    printf("fibonacci: %d\n", fib);
+//    printf("fibonacci: %d\n", fibonacci(10));
+//
+//    printf("sum: %d\n", sun_of_digits(12345));
+//
+//    printf("count: %d\n", count_of_digits(12345));
+//
+//    print_nums(3, 1, 2);
 
-    int sum = sun_of_digits(12345);
-    printf("sum: %d\n", sum);
-
-    int count = count_of_digits(12345);
-    printf("count: %d\n", count);
+    printf("Acs?: %d", check_order(321));
 
     return 0;
 }
