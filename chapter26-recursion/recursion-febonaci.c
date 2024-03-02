@@ -35,6 +35,11 @@ int check_order(int num) {
     return 0;
 }
 
+int check_even_coincidences(int num, int digit) {
+    if (num < 10) return num != digit;
+    return ((num % 10 == digit) + check_even_coincidences(num / 10, digit)) % 2;
+}
+
 int main() {
 //    printf("fibonacci: %d\n", fibonacci(10));
 //
@@ -44,7 +49,9 @@ int main() {
 //
 //    print_nums(3, 1, 2);
 
-    printf("Acs?: %d", check_order(321));
+//    printf("Acs?: %d", check_order(321));
+
+    printf("coincidences: %d", check_even_coincidences(245245221, 2));
 
     return 0;
 }
