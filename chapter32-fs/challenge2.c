@@ -4,7 +4,7 @@
 
 int main() {
     FILE *file;
-    file = fopen("D:\\learning\\udemy__c-programming-for-beginners-programming-in-c\\chapter32-fs\\lorem.txt", "r");
+    file = fopen("chapter32-fs\\lorem.txt", "r");
 
     if (file == NULL) {
         printf("File open failure\n");
