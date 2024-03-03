@@ -10,6 +10,5 @@ void print_int2(int* const num) {
 }
 
 int main() {
-
     return 0;
 }
