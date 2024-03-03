@@ -28,8 +28,15 @@ int main() {
         if (c >= 'a' && c <= 'z')
             arr[c - 'a']++;
 
-    for (int i = 0; i < alphabet_size; i++)
+    int max_index = 0;
+    for (int i = 0; i < alphabet_size; i++) {
         printf("%c: %d\n", i + 'a', arr[i]);
+        if (arr[max_index] < arr[i]) max_index = i;
+    }
+
+    printf("\nLetter with max appearances is: \"%c\"\n", max_index + 'a');
+
+    fclose(file);
 
     return 0;
 }
